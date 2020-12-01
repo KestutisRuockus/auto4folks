@@ -1,0 +1,53 @@
+body{
+    background-image: url( './img/background.jpg' );
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    margin-top: 20px;
+}
+
+.navbar{
+    height: 100px;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    margin-right: 10%;
+}
+
+.navbar a {
+    margin-right: 50px;
+    color: #fff;
+    font-weight: bold;
+    font-size: 20px;
+    text-decoration: none;
+    list-style: none;
+}
+
+.navbar a:hover{
+    color: yellow;
+}
+
+.navbar img{
+    width: 250px;
+    height: 90px;
+    margin-left: 10%;
+}
+
+.buy-rent-img {
+    display: flex;
+}
+
+.buy-rent-img img{
+    border: #000;
+    border: solid;
+    border-radius: 10px;
+    padding: 5px;
+}
+
+.buy-rent-img img:hover{
+    background: black;
+    opacity: 0.8;
+}

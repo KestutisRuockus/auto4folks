@@ -1,0 +1,86 @@
+body{
+    background-image: url( './img/background.jpg' );
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    margin-top: 20px;
+}
+
+.navbar{
+    height: 100px;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    margin-right: 10%;
+}
+
+.navbar a {
+    margin-right: 50px;
+    color: #fff;
+    font-weight: bold;
+    font-size: 20px;
+    text-decoration: none;
+    list-style: none;
+}
+
+.navbar a:hover{
+    color: yellow;
+}
+
+.navbar img{
+    width: 250px;
+    height: 90px;
+    margin-left: 10%;
+}
+
+.buy-rent-img {
+    display: flex;
+}
+
+.buy-rent-img img{
+    border: #000;
+    border: solid;
+    border-radius: 10px;
+    padding: 5px;
+}
+
+.buy-rent-img img:hover{
+    background: black;
+    opacity: 0.8;
+}
+
+.card{
+    background-color:  #212529be;
+    width: 30%;
+    margin: auto;
+    margin-top: 5%;
+    padding-top: 15px;
+}
+
+.card label{
+    color: #fff;
+    font-weight: bold;
+    margin-left: 15%;
+}
+
+.form-control{
+    width: 80%;
+    margin-left: 10%;
+}
+
+.btn-primary{
+    background: #212529;
+    color: #fff;
+    font-weight: bold;
+    border: none;
+    margin-left: 40%;
+    margin-bottom: 20px;
+}
+
+.btn-primary:hover{
+    background: yellow;
+    color: #000;
+}
