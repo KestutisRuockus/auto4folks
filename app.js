@@ -2,6 +2,7 @@ const express = require( 'express' );
 const mysql = require( 'mysql' );
 const dotenv = require( 'dotenv' );
 const path = require( 'path' );
+const cokieParser = require( 'cookie-parser' );
 
 dotenv.config({ path: './.env' });
 
@@ -9,10 +10,10 @@ const app = express();
 
 // Creating connection to db ( MySQL )
 const db = mysql.createConnection({
-    host: process.env.DATABASE_HOST,
-    user: process.env.DATABASE_USER,
-    password: process.env.DATABASE_PASSWORD,
-    database: process.env.DATABASE
+    host:       process.env.DATABASE_HOST,
+    user:       process.env.DATABASE_USER,
+    password:   process.env.DATABASE_PASSWORD,
+    database:   process.env.DATABASE
 });
 
 
@@ -20,6 +21,15 @@ const db = mysql.createConnection({
 // css files directory
 const publicDirectory = path.join( __dirname, './public' );
 app.use( express.static( publicDirectory ));
+
+
+
+// parse URL-encoded bodies ( as sent by HTML forms )
+app.use( express.urlencoded({ extended: false }));
+
+// parse JSON bodies ( as sent by API clients )
+app.use( express.json() );
+app.use( cokieParser() );
 
 app.set( 'view engine', 'hbs' );
 
@@ -38,8 +48,7 @@ db.connect(( error ) => {
 
 // Define routes
 app.use( '/', require( './routes/pages' ));
-app.use( '/register', require( './routes/pages' ));
-app.use( 'login', require( './routes/pages') );
+app.use( '/auth', require( './routes/auth' ));
 
 
 
